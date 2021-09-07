@@ -3,14 +3,25 @@
 /**
  * 
  */
-class About
+class About extends Controller
 {
+    //Method index adalah default
     public function index($nama = 'Izzul', $pekerjaan = 'Developers'){
-        echo "Hai, Namaku $nama. Aku adalah seorang $pekerjaan!";
+        $data['nama'] = $nama;
+        $data['pekerjaan'] = $pekerjaan;
+        $data['judul'] = 'About';
+
+        $this->view('templates/header', $data);
+        $this->view('about/index', $data);
+        $this->view('templates/footer');
     }
 
     public function page(){
-        echo "about/page";
+        $data['judul'] = 'Page';
+
+        $this->view('templates/header', $data);
+        $this->view('about/page');
+        $this->view('templates/footer');
     }
 }
 
