@@ -32,7 +32,7 @@ class Database {
         $this->stmt = $this->dbh->prepare($query);
     }
 
-   /* public function bind($param, $value, $type = NULL){
+    public function bind($param, $value, $type = NULL){
         if ( is_null($type) ) {
             switch ( true ) {
                 case is_int($value) :
@@ -49,7 +49,7 @@ class Database {
             }
         } 
         $this->stmt->bindValue($param, $value, $type);
-    }*/
+    }
 
     public function execute(){
         $this->stmt->execute();
@@ -57,12 +57,12 @@ class Database {
 
     public function resultSet(){
         $this->execute();
-        $this->stmt->fetchAll(PDO::FETCH_ASSOC);
+       return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function single(){
         $this->execute();
-        $this->stmt->fetch(PDO::FETCH_ASSOC);
+        return $this->stmt->fetch(PDO::FETCH_ASSOC);
     }
 
 }

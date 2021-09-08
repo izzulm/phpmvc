@@ -11,9 +11,7 @@
                     <li><?= $mhs['email']; ?></li>
                     <li><?= $mhs['jurusan']; ?></li>
                 </ul>
-            <?php endforeach ?> 
-
-            <?php echo $data['judul']; ?>
+            <?php endforeach ?>
         </div>
     </div>
 
