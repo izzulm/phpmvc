@@ -2,7 +2,7 @@
 
 class Mahasiswa_model {
 
-    private $table = 'mahasiswa';
+    private $table = 'Mahasiswa';
     private $db;
 
     public function __construct(){
@@ -10,7 +10,7 @@ class Mahasiswa_model {
     }
 
     public function getAllmhs(){
-        $this->db->query('SELECT * FROM '.$this->table);
+        $this->db->query('SELECT * FROM mahasiswa');
         return $this->db->resultSet();
     }
 }

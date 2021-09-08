@@ -18,7 +18,7 @@ class Database {
 
         $option = [
             PDO::ATTR_PERSISTENT => true,
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         ];
 
         try {
@@ -32,27 +32,24 @@ class Database {
         $this->stmt = $this->dbh->prepare($query);
     }
 
-    public function bind($param, $value, $type = NULL){
+   /* public function bind($param, $value, $type = NULL){
         if ( is_null($type) ) {
             switch ( true ) {
-                case is_int($value):
+                case is_int($value) :
                     $type = PDO::PARAM_INT;
                 break;
-
-                case is_bool($value):
+                case is_bool($value) :
                     $type = PDO::PARAM_BOOL;
                 break;
-
-                case is_null($value):
+                case is_null($value) :
                     $type = PDO::PARAM_NULL;
                 break;
-
                 default :
                     $type = PDO::PARAM_STR;
             }
         } 
         $this->stmt->bindValue($param, $value, $type);
-    }
+    }*/
 
     public function execute(){
         $this->stmt->execute();
