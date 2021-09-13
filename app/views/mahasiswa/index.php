@@ -53,7 +53,7 @@
               <option value="Teknik Planologi"> Teknik Planologi </option>
               <option value="Teknik Arsitekture"> Teknik Arsitekture</option>
             </select>
-            <label for="jurusan">Jurusan</label>
+            <label for="jurusan">Pilih Jurusan</label>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
