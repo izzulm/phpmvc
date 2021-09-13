@@ -65,6 +65,12 @@ class Database {
         return $this->stmt->fetch(PDO::FETCH_ASSOC);
     }
 
+    //menghitung jumlah baris yang diinput
+    public function hitungRow(){
+        //rowCount adalah method PDO untuk menghintung jumlah baris
+        return $this->stmt->rowCount();
+    }
+
 }
 
 
