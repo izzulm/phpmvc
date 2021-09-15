@@ -59,6 +59,31 @@ class Mahasiswa extends Controller {
             exit;
         }
     }
+
+    public function getubah(){
+        //ambil data dari id nya lalu ubah ke bentuk json
+        echo json_encode( $this->model('Mahasiswa_model')->getMahasiswaById($_POST['id']) );
+    }
+
+    public function ubah(){
+        if ( $this->model('Mahasiswa_model')->ubahDataMahasiswa($_POST) > 0 ) {
+
+            //membuat isi flash
+            Flasher::setFlash('berhasil', 'diubah', 'success');
+
+            //redirect ke halaman mahasiswa
+            header('Location: ' . BASEURL . '/mahasiswa');
+            exit;
+        }else{
+
+            //membuat isi flash
+            Flasher::setFlash('gagal', 'diubah', 'danger');
+
+            //redirect ke halaman mahasiswa
+            header('Location: ' . BASEURL . '/mahasiswa');
+            exit;
+        }
+    }
 }
 
  ?>
