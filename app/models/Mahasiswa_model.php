@@ -43,6 +43,23 @@ class Mahasiswa_model {
         //mendapatkan nilai jumlah baris yang dimasukan
         return $this->db->hitungRow();
     }
+
+    //method hapus data
+    public function hapusDataMahasiswa($id){
+        //set query
+        $query = "DELETE FROM mahasiswa WHERE id = :id";
+
+        //menjalankna query
+        $this->db->query($query);
+        //mengkaitkan param $id ke 'id' agar dibaca di query
+        $this->db->bind('id', $id);
+
+        //eksekusi database
+        $this->db->execute();
+
+        //cek baris yang kehapus kalo kehapus ada data angka 1 kalo gagal hapus 0
+        return $this->db->hitungRow();
+    }
 }
 
 

@@ -3,6 +3,11 @@
 <head>
     <title>Halaman <?= $data['judul']; ?></title>
     <link rel="stylesheet" type="text/css" href="<?= BASEURL; ?>/css/bootstrap.css">
+    <style type="text/css">
+      #cek-hover:hover {
+        color: hotpink;
+      }
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
