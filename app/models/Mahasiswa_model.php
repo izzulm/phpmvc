@@ -88,6 +88,19 @@ class Mahasiswa_model {
         //mendapatkan nilai jumlah baris yang dimasukan
         return $this->db->hitungRow();
     }
+
+    //method cari
+    public function cariAllmhs(){
+        //tangkap data dari index mahasiswa yang di submit simpen di var keyword
+        $tangkapKeywordCari = $_POST['keywordCari'];
+        $query = "SELECT * FROM mahasiswa WHERE nama LIKE :keyword";
+
+        //jalankan isi var Query
+        $this->db->query($query);
+        //mengkaitkan keyword cari dan keyword
+        $this->db->bind('keyword', "%$tangkapKeywordCari%");
+        return $this->db->resultSet();
+    }
 }
 
 

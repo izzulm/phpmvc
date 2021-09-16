@@ -51,15 +51,18 @@ class Database {
         $this->stmt->bindValue($param, $value, $type);
     }
 
+    //menjalankan statement atau database
     public function execute(){
         $this->stmt->execute();
     }
 
+    //menampilkan data mahasiswa berupa array assosiatif
     public function resultSet(){
         $this->execute();
        return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    //menampilkan single data mahasiswa
     public function single(){
         $this->execute();
         return $this->stmt->fetch(PDO::FETCH_ASSOC);
